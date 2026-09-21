@@ -1,47 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Random Gradient Button</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: Arial, sans-serif;
-      text-align: center;
-      transition: background 0.5s ease; /* smooth background change */
-    }
-    button {
-      padding: 12px 24px;
-      font-size: 16px;
-      cursor: pointer;
-      border: none;
-      border-radius: 5px;
-      background: #ff7e5f;
-      color: white;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    }
-    button:hover {
-      background: #feb47b;
-    }
-  </style>
-  </head>
-  <body>
+
+  <!-- Connect the CSS file -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
   <button id="randomBtn">Random Gradient</button>
 
-    <script>
+  <script>
     document.getElementById('randomBtn').addEventListener('click', function() {
+
       // Generate random colors
       const color1 = `hsl(${Math.random() * 360}, 70%, 50%)`;
       const color2 = `hsl(${Math.random() * 360}, 70%, 50%)`;
 
       // Create a random gradient
-      const gradient = `linear-gradient(${Math.random() < 0.5 ? 'to right' : 'to bottom'}, ${color1}, ${color2})`;
+      const gradient = `linear-gradient(
+        ${Math.random() < 0.5 ? 'to right' : 'to bottom'},
+        ${color1},
+        ${color2}
+      )`;
 
-      // Apply to body
+      // Apply the gradient to the body
       document.body.style.background = gradient;
     });
-    </script>
-  </body>
+  </script>
+
+</body>
 </html>
