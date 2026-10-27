@@ -13,19 +13,16 @@
 
   <button id="randomBtn">Random Gradient</button>
 
-  <script>
+  <script> // javascript
     document.getElementById('randomBtn').addEventListener('click', function() {
 
       // Generate random colors
-      const color1 = `hsl(${Math.random() * 360}, 70%, 50%)`;
+      const color1 = `hsl(${Math.random() * 360}, 70%, 50%)`; //Math.random() generates a random decimal from 0 to 1 and my codes uses it to get a random hue
       const color2 = `hsl(${Math.random() * 360}, 70%, 50%)`;
 
       // Create a random gradient
-      const gradient = `linear-gradient(
-        ${Math.random() < 0.5 ? 'to right' : 'to bottom'},
-        ${color1},
-        ${color2}
-      )`;
+      const gradient = `linear-gradient(  
+        ${Math.random() < 0.5 ? 'to right' : 'to bottom'}, ${color1}, ${color2})`;  // linear-gradient(direction, color1, color2) which way the gradient goes and what colors
 
       // Apply the gradient to the body
       document.body.style.background = gradient;
